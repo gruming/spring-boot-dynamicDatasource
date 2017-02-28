@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kevin.boot.web.mapper.UserMapper">
+	<select id="users" parameterType="com.kevin.boot.web.entity.UserEntity" resultType="com.kevin.boot.web.entity.UserEntity">
+		SELECT
+			*
+		FROM
+			user;
+	</select>
+	
+	<insert id="create" parameterType="com.kevin.boot.web.entity.UserEntity" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+		INSERT INTO user(id,age,birthDay,passWord,userName) VALUES (#{id},#{age},#{birthDay},#{passWord},#{userName});
+	</insert>
+</mapper>
